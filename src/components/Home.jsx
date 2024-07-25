@@ -4,7 +4,7 @@ import {useInView} from 'react-intersection-observer';
 import '../assets/css/Home.css';
 
 function Home() {
-    const [menuOpen, setMenuOpen] = useState(false);
+    // const [menuOpen, setMenuOpen] = useState(false);
     const navRef = useRef(null);
 
     const [ref1, inView1] = useInView({
@@ -59,32 +59,18 @@ function Home() {
         <div className="home-container">
             <div className="main-content">
                 <div className="overlay-container">
-                    <img src="/design-consultation-2.jpg" alt="consulting"/>
-                    <div className="overlay-hero">
-                        <div className="overlay-hero-text">
-                            <p className="first-paragraph">At GreenScape Solutions, we recognize that your outdoor space
-                                is more than just a backyard - it's an extension of your home, your sanctuary, and your
-                                personal oasis. That's why we're committed to turning ordinary yards into extraordinary
-                                landscapes that mirror your distinct style and aspirations.</p>
-                            <p className={"second-paragraph"}>With a deep-rooted passion for nature and a dedication to
-                                excellence, our team of seasoned landscapers brings forth creativity, expertise, and
-                                meticulous attention to detail to every project we take on. Whether you envision a
-                                verdant green lawn, vibrant flower beds, or a tranquil outdoor living area, we possess
-                                the knowledge and proficiency to transform your landscaping dreams into reality.</p>
-                            <p>From initial design concepts to flawless installation and ongoing maintenance, we
-                                collaborate closely with each of our clients to ensure that their outdoor spaces not
-                                only meet but surpass their expectations. We take pride in delivering exceptional
-                                results that enhance the beauty, functionality, and value of your property.</p>
-                            <p>Yet, our focus extends beyond crafting stunning landscapes - it's about fostering
-                                enduring relationships with our clients. We believe in transparent communication,
-                                honesty, and personalized service at every phase of the project. Your satisfaction is
-                                our foremost priority, and we're committed to going the extra mile to ensure that you're
-                                delighted with the end outcome.</p>
-                            <p>So whether you're seeking to rejuvenate your existing landscape or envisioning a brand
-                                new outdoor masterpiece, entrust the expertise of GreenScape Solutions to bring your
-                                vision to fruition. Get in touch with us today to arrange a consultation and let's
-                                commence the journey of transforming your outdoor space into the landscape of your
-                                dreams!</p>
+                    <div className="overlay-container">
+                        <img src="/hero-cactus.jpeg" alt="Puro Cactus"/>
+                        <div className="overlay-hero">
+                            <div className="overlay-hero-text">
+                                <h1 className="first-paragraph">
+                                    <strong>Puro Cactus</strong>
+                                </h1>
+                                <p className={"second-paragraph"}> Looking to transform your yard or need beautiful,
+                                    resilient plants? Discover our sustainable solutions and expert landscaping services
+                                    today!
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +93,7 @@ function Home() {
                                     x: inView1 ? 0 : '-200px',
                                     opacity: inView1 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                                 onAnimationComplete={() => logInViewRef('ref1', inView1)} // Here's where you call logInViewRef
                             >
                                 <motion.img
@@ -123,16 +109,16 @@ function Home() {
                                     x: inView1 ? 0 : '200px',
                                     opacity: inView1 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                             >
-                                <span>Xeroscape: A serene landscape featuring drought-resistant plants and succulents, arranged in a harmonious composition. The muted color palette and geometric patterns create a tranquil oasis that requires minimal maintenance, perfect for arid climates.</span>
+                                <span>Xeriscape: A serene landscape featuring drought-resistant plants and succulents, arranged in a harmonious composition.</span>
                             </motion.div>
                         </div>
                     </div>
 
-                    <div className="space">
+                    <div className="space-100 span-padding">
                         <span>
-                            Xeriscaping is a water-efficient landscaping method that utilizes drought-tolerant plants and sustainable irrigation techniques to conserve water and promote biodiversity. By incorporating native plants and minimizing lawn areas, xeriscaping helps conserve water, enhance soil health, and support local ecosystems.
+                            Xeriscaping is a landscaping method that utilizes drought-tolerant plants and sustainable techniques to conserve water and promote biodiversity. By incorporating native plants, this conserve water, enhance soil health, and support local ecosystems.
                         </span>
                     </div>
 
@@ -146,12 +132,12 @@ function Home() {
                                     x: inView2 ? 0 : '-200px',
                                     opacity: inView2 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                                 onAnimationComplete={() => logInViewRef('ref2', inView2)} // Here's where you call logInViewRef
 
                             >
                                 <motion.img
-                                    src="/artificial-grass.jpeg"
+                                    src="/cactus-nursery.png"
                                     alt="2nd image"
                                     className="animated-image"
                                 />
@@ -163,21 +149,20 @@ function Home() {
                                     x: inView2 ? 0 : '200px',
                                     opacity: inView2 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                             >
-                                <span>Artificial Grass: A lush green lawn crafted from high-quality synthetic turf, offering the look and feel of natural grass without the need for watering or mowing. Perfectly manicured and evergreen, it provides a vibrant and low-maintenance solution for residential and commercial landscapes.</span>
+                                <span>Cactus Nursery: A vibrant oasis of hardy succulents, offering a diverse collection of cacti in various shapes and sizes. These low-maintenance plants bring a touch of desert charm to any space, thriving with minimal water and care.</span>
                             </motion.div>
                         </div>
                     </div>
 
-                    <div className="space">
+                    <div className="space-100 span-padding">
                         <span>
-                            Artificial grass is an eco-friendly landscaping solution that conserves water, reduces chemical usage, and minimizes carbon emissions. It requires no watering, pesticides, or fertilizers, making it an environmentally sustainable alternative to traditional lawns.
-                        </span>
+Cactus Nursery An eco-friendly haven of resilient succulents that conserve water and reduce chemical usage. These hardy plants thrive without the need for frequent watering, pesticides, or fertilizers, offering an environmentally sustainable alternative to traditional gardens.                         </span>
                     </div>
 
                     <div className="main-content">
-                        <div className="row content-card">
+                        <div className="row content-card ">
                             <motion.div
                                 ref={ref3}
                                 className="column image-container"
@@ -186,7 +171,7 @@ function Home() {
                                     x: inView3 ? 0 : '-200px',
                                     opacity: inView3 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                                 onAnimationComplete={() => logInViewRef('ref3', inView3)} // Here's where you call logInViewRef
 
                             >
@@ -203,15 +188,16 @@ function Home() {
                                     x: inView3 ? 0 : '200px',
                                     opacity: inView3 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                             >
-                                <span>Cactus Garden: A striking display of desert flora, featuring an array of cacti and succulents in various shapes and sizes. Against a backdrop of sandy soil and rugged rocks, these hardy plants thrive in arid conditions, showcasing their unique forms and resilience.</span>
+                                <span>
+Backyard Oasis Landscaping: Transform your outdoor space into a stunning retreat with our premium services. We create custom-designed backyards featuring lush greenery, serene water features. Our expert team crafts inviting patios, pathways, and cozy seating areas.</span>
                             </motion.div>
 
                         </div>
                     </div>
 
-                    <div className="space">
+                    <div className="space-100 span-padding">
                         <span>
                             A cactus garden is a low-maintenance and water-efficient landscaping option that thrives in arid climates. Cacti are well-adapted to dry conditions, requiring minimal water and maintenance while providing unique aesthetic appeal. Cactus gardens contribute to biodiversity by providing habitat for desert wildlife and promoting sustainable landscaping practices.
                         </span>
@@ -227,7 +213,7 @@ function Home() {
                                     x: inView4 ? 0 : '-200px',
                                     opacity: inView4 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                                 onAnimationComplete={() => logInViewRef('ref4', inView4)} // Here's where you call logInViewRef
 
                             >
@@ -244,11 +230,12 @@ function Home() {
                                     x: inView4 ? 0 : '200px',
                                     opacity: inView4 ? 1 : 0,
                                 }}
-                                transition={{duration: 1}}
+                                transition={{duration: .5}}
                             >
                                 <span>Cactus Garden: A striking display of desert flora, featuring an array of cacti and succulents in various shapes and sizes. Against a backdrop of sandy soil and rugged rocks, these hardy plants thrive in arid conditions, showcasing their unique forms and resilience.</span>
                             </motion.div>
                         </div>
+                        <div className={"space-50"}></div>
                     </div>
                 </div>
             </div>

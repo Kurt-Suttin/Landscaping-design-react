@@ -1,22 +1,22 @@
 /* Global Styles */
+/*
+This also includes all my Layout css for nav bar , footer
+Main css file
+
+*/
 :root {
     --gradient-bg: linear-gradient(
             90deg,
-            hsl(120deg 100% 0%) 0%,
-            hsl(137deg 35% 7%) 8%,
-            hsl(150deg 47% 10%) 15%,
-            hsl(161deg 82% 12%) 23%,
-            hsl(164deg 97% 15%) 31%,
-            hsl(164deg 97% 20%) 39%,
-            hsl(164deg 94% 25%) 46%,
-            hsl(164deg 94% 25%) 54%,
-            hsl(164deg 97% 20%) 62%,
-            hsl(164deg 97% 15%) 69%,
-            hsl(161deg 82% 12%) 77%,
-            hsl(150deg 47% 10%) 85%,
-            hsl(137deg 35% 7%) 92%,
-            hsl(120deg 100% 0%) 100%
+            hsl(7, 67%, 68%) 0%,
+            hsl(17deg 89% 59%) 33%,
+            hsl(17deg 89% 59%) 67%,
+            hsl(7, 67%, 68%) 100%
     );
+}
+
+.layout-container {
+    background: var(--gradient-bg);
+    padding: unset;
 }
 
 .hidden {
@@ -30,14 +30,15 @@
 body {
     margin: 0 auto;
     text-align: center;
-    background-image: url("public/rocks-plants-wallpaper.jpeg");
+    background-image: url("public/red-gravel.jpeg");
+    background-size: auto;
     overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 @media screen and (min-width: 768px) {
     body {
         max-width: 1280px;
-        overflow-x: hidden; /* Disable horizontal scrolling on mobile */
+        overflow-x: hidden; /* Disable horizontal scrolling on larger screens */
     }
 }
 
@@ -112,15 +113,20 @@ body {
 }
 
 /* Navbar */
-
-
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #019356;
-    z-index: 2;
-    padding: 10px 20px;
+    background-color: #dc204b;
+    z-index: 1000;
+    padding: 0 10px;
+    height: 150px;
+    width: 100%; /* Ensure the navbar spans the full width of its container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(255, 254, 254, 0.2); /* Optional: Add a shadow for better visibility */
 }
 
 .nav {
@@ -163,7 +169,7 @@ body {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #029f5d;
+        background-color: #f88c34;
         padding: 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
@@ -179,42 +185,23 @@ body {
     .nav-title h2 {
         display: none; /* Hide the title on tablet and smaller screens */
     }
+
+
 }
 
-
-.nav-menu {
-    display: none; /* Hide the menu by default */
-}
-
-
-.nav-menu.active {
-    display: block; /* Display the menu when active */
-}
-
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
-    z-index: 1000; /* Ensure it covers the entire page */
-}
-
-
-/*Main Content */
-
+/* Main Content */
 .main-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px 0;
+    padding-top: 10%;
     background: var(--gradient-bg);
 }
 
 .main-content img {
     max-width: 100%;
     height: auto;
+    object-fit: fill;
 }
 
 .main-content p {
@@ -228,23 +215,61 @@ body {
 .main-content h2 {
     margin-bottom: 10px;
 }
-.main-content-title{
+
+.main-content-title {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 3rem;
+    margin-top: 3px;
 }
+
 /* Image Container */
 .image-container {
     width: 50%; /* Make the image fill its column */
 }
 
 @media screen and (max-width: 768px) {
+    .overlay-container{
+        padding-top: 25px;
+        background: #1b1b1b;
+
+    }
+    .image-container img{
+        width: 100%;
+        height: 100%;
+    }
+    span {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
     .image-container {
-        width: 100%; /* Change the width to full width on smaller screens */
+        width: 100%;
+    }
+
+    .image-text-container {
+        font-size: .75em;
     }
 
     .column {
         width: 100%;
+    }
+    .footer p{
+        font-size: 1rem;
+        color: #ffffff;
+    }
+   .BDT-footer p{
+       font-size: 1rem;
+
+   }
+    .BDT-footer a{
+        color: #ffffff;
+        font-size: 1.1rem;
+        text-decoration: unset;
     }
 }
 
@@ -253,17 +278,21 @@ body {
     display: flex;
     justify-content: center;
     padding-left: 20px;
-}
-
-.image-text-container span {
+    padding-right: 20px;
     max-width: 50%;
 }
 
+.image-text-container span {
+    border-radius: 1%;
+    border: #dc204b 2px solid;
+}
 
 .content-card {
-    background: rgba(0, 0, 0, 0.5);
-    border: #333333 2px solid;
+    background-color: #dc204b;
+    border: #7eea6a 5px solid;
     box-shadow: 0px 0px 0px #1b1b1b, 0px 0px 0px #272727;
+    filter: drop-shadow(0 0 2em #61dafbaa);
+
 }
 
 /* Define a container for the row */
@@ -280,22 +309,55 @@ body {
     width: 100%;
 }
 
+
 /* Footer */
 .footer {
     color: #fff;
     padding: 20px 0;
-    text-align: center;
     background: var(--gradient-bg);
+    font-size: 1.1rem;
 }
 
-/* New styles for the overlay effect */
+.footer a {
+    text-decoration: unset;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BDT-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.BDT-footer img {
+    width: 30px;
+    aspect-ratio: 1;
+    margin-right: 5px;
+}
+
+.BDT-footer p {
+    margin: 0;
+}
+
+
 .overlay-container {
     position: relative; /* Position relative for absolute positioning of text */
     width: 100%;
     text-align: center;
     color: white;
 }
-
+.animated-image{
+    object-fit:fill;
+    background: white;
+}
 .overlay-container img {
     width: 100%;
     height: auto;
@@ -306,35 +368,41 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-top: 20px;
     border-radius: 10px;
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(4, 1, 21, 0.37), rgba(2, 6, 30, 0.36)); /* Gradient background for readability */
-    border: 1px solid; /* Define a solid border to apply border-image to */
+    border: 1px solid;
     border-image-source: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)); /* Gradient for border image */
-    border-image-slice: 1; /* Ensure the border image covers the entire border area */
-    border-image-width: 10px; /* Define the width of the border image */
-    border-image-outset: 0; /* Optional: define the amount by which the border image area extends beyond the border box */
-    border-image-repeat: stretch; /* Ensure the border image stretches to fill the entire border */
+    border-image-slice: 1;
+    border-image-width: 10px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
 }
 
 .overlay-hero-text {
-    font-size: 1.5em;
+    font-size: 2em;
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
 }
 
 .overlay-hero h1 {
     margin: 0 0 20px 0;
-    font-size: 2em;
+    font-size: 4em;
 }
 
-/* Media query to hide paragraphs except the first one on smaller screens */
+/* Media query to hide paragraphs on smaller screens */
 @media (max-width: 768px) {
-    .overlay-hero-text p {
-        display: none;
+    .overlay-hero-text {
+        font-size: 1em;
     }
+
 
     .overlay-hero-text .first-paragraph {
         display: block;
@@ -345,17 +413,30 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .overlay-hero-text p {
-        display: none;
-    }
-
-    .overlay-hero-text .first-paragraph {
-        display: block;
-    }
-
-    .overlay-hero-text .second-paragraph {
-        display: block;
-    }
+/* Utility Classes */
+.space-50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
+.space-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.span-padding {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
